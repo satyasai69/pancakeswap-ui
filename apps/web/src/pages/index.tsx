@@ -7,10 +7,10 @@ import { getCakeContract } from 'utils/contractHelpers'
 import { getBlocksFromTimestamps } from 'utils/getBlocksFromTimestamps'
 import { bitQueryServerClient, infoServerClient } from 'utils/graphql'
 import { formatEther } from 'viem'
-import Home from '../views/Home'
+import Swap from '../views/Swap'
 
 const IndexPage = () => {
-  return <Home />
+  return <Swap />
 }
 
 // Values fetched from TheGraph and BitQuery jan 24, 2022

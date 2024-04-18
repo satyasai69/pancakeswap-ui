@@ -1,33 +1,15 @@
-import { SUPPORTED_CHAIN_IDS as IFO_SUPPORTED_CHAINS } from '@pancakeswap/ifos'
 import { ContextApi } from '@pancakeswap/localization'
 import { SUPPORTED_CHAIN_IDS as POOL_SUPPORTED_CHAINS } from '@pancakeswap/pools'
-import { SUPPORTED_CHAIN_IDS as POSITION_MANAGERS_SUPPORTED_CHAINS } from '@pancakeswap/position-managers'
-import { SUPPORTED_CHAIN_IDS as PREDICTION_SUPPORTED_CHAINS } from '@pancakeswap/prediction'
 import {
   DropdownMenuItems,
-  DropdownMenuItemType,
   EarnFillIcon,
   EarnIcon,
   MenuItemsType,
-  MoreIcon,
-  NftFillIcon,
-  NftIcon,
   PancakeProtectorIcon,
-  ShoppingBasketFilledIcon,
-  ShoppingBasketIcon,
   SwapFillIcon,
   SwapIcon,
 } from '@pancakeswap/uikit'
-import {
-  FIXED_STAKING_SUPPORTED_CHAINS,
-  LIQUID_STAKING_SUPPORTED_CHAINS,
-  SUPPORT_CAKE_STAKING,
-  SUPPORT_FARMS,
-  SUPPORT_ONLY_BSC,
-} from 'config/constants/supportChains'
-import { getOptionsUrl } from 'utils/getOptionsUrl'
-import { getPerpetualUrl } from 'utils/getPerpetualUrl'
-import { nftsBaseUrl } from 'views/Nft/market/constants'
+import { SUPPORT_FARMS } from 'config/constants/supportChains'
 
 export type ConfigMenuDropDownItemsType = DropdownMenuItems & { hideSubNav?: boolean }
 export type ConfigMenuItemsType = Omit<MenuItemsType, 'items'> & { hideSubNav?: boolean; image?: string } & {
@@ -55,7 +37,7 @@ const config: (
 ) => ConfigMenuItemsType[] = (t, isDark, languageCode, chainId) =>
   [
     {
-      label: t('Trade'),
+      label: t('Trades'),
       icon: SwapIcon,
       fillIcon: SwapFillIcon,
       href: '/swap',
@@ -68,51 +50,39 @@ const config: (
         {
           label: t('Liquidity'),
           href: '/liquidity',
-        },
-        {
+        } /*
+        /*  {
           label: t('Perpetual'),
-          href: getPerpetualUrl({
-            chainId,
+          href: '/prediction' bgetPerpetualUrl({
+            chainId, 
             languageCode,
             isDark,
-          }),
-          confirmModalId: 'perpConfirmModal',
-          type: DropdownMenuItemType.EXTERNAL_LINK,
-        },
-        {
-          label: t('Options'),
-          href: getOptionsUrl(),
-          confirmModalId: 'optionsConfirmModal',
-          type: DropdownMenuItemType.EXTERNAL_LINK,
-        },
-        {
+          }), 
+          confirmModalId: 'usCitizenConfirmModal',
+          // type: DropdownMenuItemType.EXTERNAL_LINK,
+        }, */,
+        /* {
           label: t('Bridge'),
           href: 'https://bridge.pancakeswap.finance/',
           type: DropdownMenuItemType.EXTERNAL_LINK,
         },
-        {
-          label: `${t('Limit')} (Deprecated)`,
+         {
+          label: `${t('Limit')} (V2)`,
           href: '/limit-orders',
           supportChainIds: SUPPORT_ONLY_BSC,
           image: '/images/decorations/3d-coin.png',
         },
         {
+          label: t('Buy Crypto'),
+          href: '/buy-crypto',
+          supportChainIds: SUPPORT_BUY_CRYPTO,
+        },
+        {
           label: t('Trading Reward'),
           href: '/trading-reward',
           hideSubNav: true,
-        },
-      ].map((item) => addMenuItemSupported(item, chainId)),
-    },
-    {
-      label: t('Buy'),
-      href: '/buy-crypto',
-      icon: ShoppingBasketIcon,
-      fillIcon: ShoppingBasketFilledIcon,
-      items: [
-        {
-          label: t('Buy Crypto'),
-          href: '/buy-crypto',
-        },
+        }, */
+        ,
       ].map((item) => addMenuItemSupported(item, chainId)),
     },
     {
@@ -128,15 +98,16 @@ const config: (
           href: '/farms',
           supportChainIds: SUPPORT_FARMS,
         },
-        {
-          label: t('CAKE Staking'),
-          href: '/cake-staking',
-          supportChainIds: SUPPORT_CAKE_STAKING,
-        },
+
         {
           label: t('Pools'),
           href: '/pools',
           supportChainIds: POOL_SUPPORTED_CHAINS,
+        },
+        /* {
+          label: t('CAKE Staking'),
+          href: '/cake-staking',
+          supportChainIds: SUPPORT_CAKE_STAKING,
         },
         {
           label: t('Position Manager'),
@@ -152,7 +123,7 @@ const config: (
           label: t('Simple Staking'),
           href: '/simple-staking',
           supportChainIds: FIXED_STAKING_SUPPORTED_CHAINS,
-        },
+        }, */
       ].map((item) => addMenuItemSupported(item, chainId)),
     },
     {
@@ -162,29 +133,29 @@ const config: (
       href: 'https://pancakeswap.games/',
       items: [
         {
-          label: t('Gaming Marketplace'),
-          href: 'https://pancakeswap.games/',
-          type: DropdownMenuItemType.EXTERNAL_LINK,
-        },
-        {
           label: t('Prediction (BETA)'),
           href: '/prediction',
           image: '/images/decorations/prediction.png',
-          supportChainIds: PREDICTION_SUPPORTED_CHAINS,
+          // supportChainIds: PREDICTION_SUPPORTED_CHAINS,
         },
         {
           label: t('Lottery'),
           href: '/lottery',
           image: '/images/decorations/lottery.png',
         },
+        /* {
+          label: t('Gaming Marketplace'),
+          href: 'https://pancakeswap.games/',
+          type: DropdownMenuItemType.EXTERNAL_LINK,
+        },
         {
           label: t('Pottery (BETA)'),
           href: '/pottery',
           image: '/images/decorations/lottery.png',
-        },
+        }, */
       ].map((item) => addMenuItemSupported(item, chainId)),
     },
-    {
+    /* {
       label: t('NFT'),
       href: `${nftsBaseUrl}`,
       icon: NftIcon,
@@ -266,7 +237,9 @@ const config: (
           isMobileOnly: true,
         },
       ].map((item) => addMenuItemSupported(item, chainId)),
-    },
+    }, */
   ].map((item) => addMenuItemSupported(item, chainId))
 
 export default config
+
+// sai menu

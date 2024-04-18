@@ -26,9 +26,20 @@ export const farmsV3 = defineFarmV3Configs([
     token1: bscTestnetTokens.mockA,
     feeAmount: FeeAmount.LOW,
   },
+  //
+  /*
   {
     pid: 4,
-    lpAddress: '0xf7f2894abd4beE559521D754c5D481730E1C7d8C',
+    lpAddress: '0xaEdFD8CFE023962FB811e4820393ea968A2A6d2F', // '0xD3Fe855ee0ba3D6d7B15B721326195b96D7f36dd', // '0x5147173E452AE4dd23dcEe7BaAaaAB7318F16F6B',
+    token0: bscTestnetTokens.MTK,
+    token1: bscTestnetTokens.BUSD,
+    feeAmount: FeeAmount.LOWEST, 
+  },
+  */
+  //
+  {
+    pid: 4,
+    lpAddress: '0xaEdFD8CFE023962FB811e4820393ea968A2A6d2F', // '0xf7f2894abd4beE559521D754c5D481730E1C7d8C',
     token0: bscTestnetTokens.mockB,
     token1: bscTestnetTokens.mockA,
     feeAmount: FeeAmount.LOWEST,
@@ -67,6 +78,7 @@ const farms: SerializedFarmConfig[] = [
     token: bscTestnetTokens.busd,
     quoteToken: bscTestnetTokens.cake,
   },
+
   {
     pid: 4,
     lpSymbol: 'CAKE-BNB LP',

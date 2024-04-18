@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createElement, memo } from "react";
-import { Flex } from "../Box";
 import isTouchDevice from "../../util/isTouchDevice";
+import { Flex } from "../Box";
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import MenuItem from "../MenuItem/MenuItem";
 import { MenuItemsProps } from "./types";
@@ -15,7 +15,7 @@ const MenuItems: React.FC<React.PropsWithChildren<MenuItemsProps>> = ({
   return (
     <Flex {...props}>
       {items.map(({ label, items: menuItems = [], href, icon, disabled }) => {
-        const statusColor = menuItems?.find((menuItem) => menuItem.status !== undefined)?.status?.color;
+        const statusColor = menuItems?.find((menuItem) => menuItem && menuItem.status !== undefined)?.status?.color;
         const isActive = activeItem === href;
         const linkProps = isTouchDevice() && menuItems && menuItems.length > 0 ? {} : { href };
         const Icon = icon;
