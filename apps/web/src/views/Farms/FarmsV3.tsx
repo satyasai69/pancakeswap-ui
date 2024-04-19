@@ -47,11 +47,11 @@ import { useUserFarmStakedOnly, useUserFarmsViewMode } from 'state/user/hooks'
 import { styled } from 'styled-components'
 import { getFarmApr } from 'utils/apr'
 import { getStakedFarms } from 'views/Farms/utils/getStakedFarms'
-import { BCakeMigrationBanner } from 'views/Home/components/Banners/BCakeMigrationBanner'
+// import { BCakeMigrationBanner } from 'views/Home/components/Banners/BCakeMigrationBanner'
 import { useAccount } from 'wagmi'
 import Table from './components/FarmTable/FarmTable'
 import { FarmTypesFilter } from './components/FarmTypesFilter'
-import { BCakeBoosterCard } from './components/YieldBooster/components/bCakeV3/BCakeBoosterCard'
+// import { BCakeBoosterCard } from './components/YieldBooster/components/bCakeV3/BCakeBoosterCard'
 import { FarmsV3Context } from './context'
 
 const ControlContainer = styled.div`
@@ -427,12 +427,21 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
 
   const providerValue = useMemo(() => ({ chosenFarmsMemoized }), [chosenFarmsMemoized])
 
+  /** line 437 <Box mb="32px" mt="16px">
+          <BCakeMigrationBanner />
+        </Box> */
+
+  /** line 455 </Box>
+         * {(chainId === ChainId.BSC || chainId === ChainId.BSC_TESTNET) && (
+              <Box>
+                <BCakeBoosterCard />
+              </Box>
+               </FarmFlexWrapper>
+            )}  */
+
   return (
     <FarmsV3Context.Provider value={providerValue}>
       <PageHeader>
-        <Box mb="32px" mt="16px">
-          <BCakeMigrationBanner />
-        </Box>
         <Flex flexDirection="column">
           <FarmFlexWrapper justifyContent="space-between">
             <Box style={{ flex: '1 1 100%' }}>
@@ -451,12 +460,6 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
                 </Button>
               </NextLinkFromReactRouter>
             </Box>
-
-            {(chainId === ChainId.BSC || chainId === ChainId.BSC_TESTNET) && (
-              <Box>
-                <BCakeBoosterCard />
-              </Box>
-            )}
           </FarmFlexWrapper>
         </Flex>
       </PageHeader>

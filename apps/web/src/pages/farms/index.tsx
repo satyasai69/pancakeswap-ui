@@ -7,6 +7,10 @@ import { FarmV3Card } from 'views/Farms/components/FarmCard/V3/FarmV3Card'
 import ProxyFarmContainer, {
   YieldBoosterStateContext,
 } from 'views/Farms/components/YieldBooster/components/ProxyFarmContainer'
+
+/* import ProxyFarmContainer, {
+  YieldBoosterStateContext,
+} from 'views/Farms/components/YieldBooster/components/ProxyFarmContainer'  */
 import { getDisplayApr } from 'views/Farms/components/getDisplayApr'
 import { useAccount } from 'wagmi'
 

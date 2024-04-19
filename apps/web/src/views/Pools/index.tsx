@@ -21,7 +21,7 @@ import CardActions from './components/PoolCard/CardActions'
 import CardFooter from './components/PoolCard/CardFooter'
 import PoolControls from './components/PoolControls'
 import PoolRow, { VaultPoolRow } from './components/PoolsTable/PoolRow'
-import { VeCakeFourYearCard } from './components/VeCakeFourYearCard'
+// import { VeCakeFourYearCard } from './components/VeCakeFourYearCard' // 67 line  <VeCakeFourYearCard />
 
 const CardLayout = styled(FlexLayout)`
   justify-content: center;
@@ -64,7 +64,6 @@ const Pools: React.FC<React.PropsWithChildren> = () => {
               {t('High APR, low risk.')}
             </Heading>
           </Flex>
-          <VeCakeFourYearCard />
         </Flex>
       </PageHeader>
       <Page>

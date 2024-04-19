@@ -61,7 +61,7 @@ export const VaultPoolRow: React.FC<
               {t('This product have been upgraded!')}
             </Text>
           ) : (
-            <VeCakeBenefitCard isTableView />
+            <VeCakeBenefitCard />
           )}
         </MigrateCell>
       ) : null}

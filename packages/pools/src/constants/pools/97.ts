@@ -4,7 +4,7 @@ import { getAddress } from 'viem'
 import { PoolCategory, SerializedPool } from '../../types'
 
 export const livePools: SerializedPool[] = [
-  {
+  /* {
     sousId: 0,
     stakingToken: bscTestnetTokens.cake2,
     earningToken: bscTestnetTokens.cake2,
@@ -12,7 +12,7 @@ export const livePools: SerializedPool[] = [
     poolCategory: PoolCategory.CORE,
     tokenPerBlock: '0.01',
     isFinished: false,
-  },
+  }, */
   {
     sousId: 1,
     stakingToken: bscTestnetTokens.cake2,
