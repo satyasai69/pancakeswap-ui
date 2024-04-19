@@ -110,3 +110,4 @@ pnpm build:games
 | [v3-sdk](/packages/v3-sdk)                 | An SDK for building applications on top of Pancakeswap V3.                                                  |
 # pancakeswap-ui
 # pancakeswap-ui
+# pancakeswap-ui
