@@ -5,7 +5,7 @@ import { NextLinkFromReactRouter } from '@pancakeswap/widgets-internal'
 
 import { usePhishingBanner } from '@pancakeswap/utils/user'
 import { NetworkSwitcher } from 'components/NetworkSwitcher'
-import PhishingWarningBanner from 'components/PhishingWarningBanner'
+// import PhishingWarningBanner from 'components/PhishingWarningBanner'
 import { useActiveChainId } from 'hooks/useNetwork'
 import { useCakePrice } from 'hooks/useStablePrice'
 import orderBy from 'lodash/orderBy'
@@ -82,7 +82,7 @@ export const Menu = (props) => {
           links={menuItems}
           activeItem={activeMenuItem?.href}
           isDark={isDark}
-          banner={show ? <PhishingWarningBanner /> : undefined}
+          /* banner={show ? <PhishingWarningBanner /> : undefined} */
           rightSide={
             <>
               <SettingsButton mr="8px" />
